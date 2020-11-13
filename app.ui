@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>996</width>
-    <height>693</height>
+    <height>579</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -133,7 +133,7 @@
               </property>
               <property name="font">
                <font>
-                <pointsize>14</pointsize>
+                <pointsize>18</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
                </font>
@@ -175,9 +175,14 @@
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="fea_lbl">
+               <widget class="QLabel" name="fer_lbl">
+                <property name="font">
+                 <font>
+                  <pointsize>24</pointsize>
+                 </font>
+                </property>
                 <property name="text">
-                 <string>Facial Expression Analysis</string>
+                 <string>Facial Expression Recognition</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -185,9 +190,9 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="lblOutput">
+               <widget class="QLabel" name="webcam_lbl">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -197,6 +202,11 @@
                   <width>0</width>
                   <height>0</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>Webcam Feed</string>
@@ -214,6 +224,11 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="font">
+                 <font>
+                  <pointsize>24</pointsize>
+                 </font>
+                </property>
                 <property name="text">
                  <string>Speech Disfluency Feedback</string>
                 </property>
@@ -225,7 +240,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QTextBrowser" name="teleprompter">
+             <widget class="QTextBrowser" name="speech_notes">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
