@@ -1,4 +1,4 @@
-import sys, time, cv2, numpy, random, flask
+import sys, time, cv2, numpy, random, flask, pygame
 from fer import FER
 from stopwatch import Stopwatch
 from PyQt5 import QtWidgets, QtGui, uic
@@ -12,6 +12,8 @@ class FlaskServer(QThread):
 
     Flask_App = flask.Flask(__name__)
     Flask_App.config['DEBUG'] = False
+    pygame.mixer.init()
+    pygame.mixer.music.load("chime.wav")
 
     def run(self):
        self.Flask_App.run(host='0.0.0.0')
@@ -21,6 +23,8 @@ class FlaskServer(QThread):
     def set_count():
         if UIThread.Get_State() == 'Running':
             UIThread.Add_SDF()
+            pygame.mixer.music.play()
+            
 
         return flask.jsonify(flask.request.json)
 
@@ -294,7 +298,7 @@ class VideoThread(QThread):
         # Capture from Webcam
         width = 320
         height = 240
-        video_capture_device = cv2.VideoCapture(2)
+        video_capture_device = cv2.VideoCapture(0)
         video_capture_device.set(cv2.CAP_PROP_FRAME_WIDTH, width)
         video_capture_device.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
         
